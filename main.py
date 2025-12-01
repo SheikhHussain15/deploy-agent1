@@ -54,7 +54,7 @@ async def handle_message(message : cl.Message):
     )
 
     async for event in result.stream_events():
-        if event.type == "raw_response_event" and hasattr(event.data, "ResponseTextDeltaEvent"):
+        if event.type == "raw_response_event" and isinstance(event.data, ResponseTextDeltaEvent):
             await msg.stream_token(event.data.delta)
             
     history.append({"role": "assistant", "content": result.final_output})
