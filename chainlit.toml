@@ -1,3 +1,7 @@
 [server]
 host = "0.0.0.0"
 port = "${PORT}"
+
+[UI]
+# Name of the assistant.
+name = "Shariah advisor"
